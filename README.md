@@ -91,4 +91,9 @@ Send results to SonarQube server
 You can see issues under Dashboard → sample-app
 
 
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=Sample_app \
+  -Dsonar.projectName='Sample_app' \
+  -Dsonar.host.url=http://184.73.14.110:9000 \
+  -Dsonar.token=sqp_b0abb072ee9e184322faa9cdfb0fcb5bbd612494
 
