@@ -2,6 +2,21 @@
 Assignment 
  Deploy a SonarQube server, integrate it with a sample application and perform static code analysis.
 
+Sonar_assign/
+ ├── pom.xml
+ └── src
+     ├── main
+     │   └── java
+     │       └── com
+     │           └── example
+     │               └── Hello.java
+     └── test
+         └── java
+             └── com
+                 └── example
+                     └── HelloTest.java
+
+
 
 Step 1: Deploy SonarQube Server
 Option A: Run with Docker (Recommended for quick setup)
