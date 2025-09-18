@@ -22,7 +22,7 @@ pipeline {
                         mvn clean verify sonar:sonar \
                             -Dsonar.projectKey=main \
                             -Dsonar.host.url=${SONAR_HOST_URL} \
-                            -Dsonar.token=${SONAR_TOKEN}
+                            -Dsonar.login=${SONAR_TOKEN}
                     """
                 }
             }
@@ -37,12 +37,18 @@ pipeline {
     }
 
     post {
-        always {
-            echo 'Pipeline finished.'
+        success {
+            echo 'Pipeline succeeded. Archiving artifacts and publishing test results...'
+            archiveArtifacts artifacts: 'target/*.jar', allowEmptyArchive: true
+            junit 'target/surefire-reports/*.xml'
         }
+
         failure {
             echo 'Pipeline failed. Check logs for details.'
         }
+
+        always {
+            echo 'Pipeline finished.'
+        }
     }
 }
-
