@@ -1,70 +1,49 @@
 pipeline {
     agent any
 
-    // Environment variables
     environment {
-        SONAR_HOST_URL = 'http://184.73.14.110:9000'       // SonarQube URL
-        SONAR_AUTH_TOKEN = credentials('sonarqube-token')  // Jenkins credential ID for SonarQube token
-        BRANCH_NAME = 'main'                                // Hardcoded branch
+        SONAR_HOST_URL = 'http://184.73.14.110:9000'
     }
 
     stages {
-        // --------------------------
-        stage('Checkout Code') {
+        stage('Checkout SCM') {
             steps {
-                script {
-                    echo "Checking out branch: ${env.BRANCH_NAME}"
-                    git branch: "${env.BRANCH_NAME}",
-                        url: 'https://github.com/Darshancr9/Sonar_assign_15-9-2025.git'
-                }
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/main']],
+                          userRemoteConfigs: [[url: 'https://github.com/Darshancr9/Sonar_assign_15-9-2025.git']]])
             }
         }
 
-        // --------------------------
         stage('SonarQube Scan') {
+            environment {
+                SONAR_TOKEN = credentials('SONAR_AUTH_TOKEN')  // Use the Jenkins credential ID
+            }
             steps {
-                script {
-                    echo "Running SonarQube analysis..."
-                    sh """
-                        mvn clean verify sonar:sonar \
-                          -Dsonar.projectKey=${env.BRANCH_NAME} \
-                          -Dsonar.host.url=${SONAR_HOST_URL} \
-                          -Dsonar.login=${SONAR_AUTH_TOKEN}
-                    """
-                }
+                echo 'Running SonarQube analysis...'
+                sh """
+                    mvn clean verify sonar:sonar \
+                        -Dsonar.projectKey=main \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
+                        -Dsonar.token=${SONAR_TOKEN}
+                """
             }
         }
 
-        // --------------------------
         stage('Build & Package') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
-                script {
-                    echo "Building the project and generating artifacts..."
-                    sh """
-                        mvn clean package
-                        mkdir -p artifacts
-                        cp target/*.jar artifacts/
-                    """
-                }
-            }
-            post {
-                success {
-                    archiveArtifacts artifacts: 'artifacts/*.jar', fingerprint: true
-                    echo "Artifacts archived successfully."
-                }
+                echo 'Building and packaging the project...'
+                sh 'mvn clean package'
             }
         }
     }
 
     post {
-        success {
-            echo "Pipeline completed successfully!"
+        always {
+            echo 'Pipeline finished.'
         }
         failure {
-            echo "Pipeline failed. Check logs for details."
+            echo 'Pipeline failed. Check logs for details.'
         }
     }
 }
+
