@@ -1,6 +1,6 @@
-projectKey=sample-app
-serverUrl=http://18.212.227.98:9000
+projectKey=Sample_app
+serverUrl=http://184.73.14.110:9000
 serverVersion=25.9.0.112764
-dashboardUrl=http://18.212.227.98:9000/dashboard?id=sample-app
-ceTaskId=d3e3a12b-90ee-480c-a7dc-257531bb497a
-ceTaskUrl=http://18.212.227.98:9000/api/ce/task?id=d3e3a12b-90ee-480c-a7dc-257531bb497a
+dashboardUrl=http://184.73.14.110:9000/dashboard?id=Sample_app
+ceTaskId=e0ce9ff2-4e56-4e3a-8d29-4c8f69da6067
+ceTaskUrl=http://184.73.14.110:9000/api/ce/task?id=e0ce9ff2-4e56-4e3a-8d29-4c8f69da6067

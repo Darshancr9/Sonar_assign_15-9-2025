@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.example.HelloTest" time="0.058" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.example.HelloTest" time="0.098" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="sonar.token" value="sqp_d0fc0fed9d92bb59167d29aaa466317eff885339"/>
+    <property name="sonar.token" value="sqp_b0abb072ee9e184322faa9cdfb0fcb5bbd612494"/>
     <property name="java.vm.version" value="17.0.16+8-Ubuntu-0ubuntu124.04.1"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/ubuntu/Sonar_assign"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/ubuntu/Sonar_assign_15-9-2025"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -14,8 +14,8 @@
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/ubuntu/Sonar_assign"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="user.dir" value="/home/ubuntu/Sonar_assign_15-9-2025"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="17.0.16+8-Ubuntu-0ubuntu124.04.1"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
@@ -31,19 +31,19 @@
     <property name="java.class.version" value="61.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="6.14.0-1012-aws"/>
+    <property name="os.version" value="6.14.0-1011-aws"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/ubuntu"/>
     <property name="user.timezone" value="Etc/UTC"/>
-    <property name="sonar.host.url" value="http://18.212.227.98:9000"/>
+    <property name="sonar.host.url" value="http://184.73.14.110:9000"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="17"/>
-    <property name="sonar.projectKey" value="sample-app"/>
+    <property name="sonar.projectKey" value="Sample_app"/>
     <property name="user.name" value="ubuntu"/>
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify sonar:sonar -Dsonar.projectKey=sample-app -Dsonar.projectName=sample-app -Dsonar.host.url=http://18.212.227.98:9000 -Dsonar.token=sqp_d0fc0fed9d92bb59167d29aaa466317eff885339"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean verify sonar:sonar -Dsonar.projectKey=Sample_app -Dsonar.projectName=Sample_app -Dsonar.host.url=http://184.73.14.110:9000 -Dsonar.token=sqp_b0abb072ee9e184322faa9cdfb0fcb5bbd612494"/>
     <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -60,7 +60,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
-    <property name="sonar.projectName" value="sample-app"/>
+    <property name="sonar.projectName" value="Sample_app"/>
   </properties>
-  <testcase classname="com.example.HelloTest" name="testAdd" time="0.058"/>
+  <testcase classname="com.example.HelloTest" name="testAdd" time="0.098"/>
 </testsuite>
