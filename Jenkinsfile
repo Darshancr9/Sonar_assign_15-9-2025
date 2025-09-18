@@ -15,17 +15,16 @@ pipeline {
         }
 
         stage('SonarQube Scan') {
-            environment {
-                SONAR_TOKEN = credentials('SONAR_AUTH_TOKEN')  // Use the Jenkins credential ID
-            }
             steps {
-                echo 'Running SonarQube analysis...'
-                sh """
-                    mvn clean verify sonar:sonar \
-                        -Dsonar.projectKey=main \
-                        -Dsonar.host.url=${SONAR_HOST_URL} \
-                        -Dsonar.token=${Sample_app}
-                """
+                withCredentials([string(credentialsId: 'Sample_app', variable: 'SONAR_TOKEN')]) {
+                    echo 'Running SonarQube analysis...'
+                    sh """
+                        mvn clean verify sonar:sonar \
+                            -Dsonar.projectKey=main \
+                            -Dsonar.host.url=${SONAR_HOST_URL} \
+                            -Dsonar.token=${SONAR_TOKEN}
+                    """
+                }
             }
         }
 
