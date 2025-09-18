@@ -1,5 +1,5 @@
 # Sonar_assign
-Assignment 
+Assignment
  Deploy a SonarQube server, integrate it with a sample application and perform static code analysis.
 
 Sonar_assign/
