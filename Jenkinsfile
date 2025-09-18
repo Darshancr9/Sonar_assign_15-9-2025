@@ -24,7 +24,7 @@ pipeline {
                     mvn clean verify sonar:sonar \
                         -Dsonar.projectKey=main \
                         -Dsonar.host.url=${SONAR_HOST_URL} \
-                        -Dsonar.token=${SONAR_TOKEN}
+                        -Dsonar.token=${Sample_app}
                 """
             }
         }
