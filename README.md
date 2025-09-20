@@ -1,6 +1,18 @@
 # Sonar_assign
-Assignment
+Assignment 15/09/2025
  Deploy a SonarQube server, integrate it with a sample application and perform static code analysis.
+ 
+Assignment 16/09/2025 - In continuation to previous assignment
+
+1.⁠ ⁠Trigger a jenkins pipeline on new branch named (name.developer) using webhooks.
+2.⁠ ⁠⁠Pull latest code from Github
+3.⁠ ⁠⁠Setup  Sonar-Qube on K8s cluster and add a stage in jenkins to scan the code after checkout out
+4.⁠ ⁠⁠If Sonar-Qube test successfully completes, then build and generate artifacts .
+-
+-
+-
+-
+-
 
 Sonar_assign/
  ├── pom.xml
