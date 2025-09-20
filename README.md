@@ -39,6 +39,7 @@ Sonar_assign/
 
 Step 1: Deploy SonarQube Server
 Option A: Run with Docker (Recommended for quick setup)
+
 # Create a Docker network
 docker network create sonarnet
 
